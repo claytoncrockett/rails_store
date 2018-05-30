@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def show
- 
+    @ratingavg = Comment.average(:rating)
   end
 
   def new

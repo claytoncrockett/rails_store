@@ -7,4 +7,12 @@ class Comment < ApplicationRecord
       self.author = 'anon'
     end
   end
+
+  def self.test
+    Comment.find_by_sql("
+    SELECT AVG(rating)
+    FROM comments
+    ")
+  end
+  
 end
